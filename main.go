@@ -48,7 +48,6 @@ func Walk(base string) {
 			return nil
 		}
 		if info.IsDir() {
-			// Walk(strings.Join(stack, "/"))
 			return nil
 		}
 		ext := filepath.Ext(path)
@@ -59,7 +58,6 @@ func Walk(base string) {
 			return nil
 		}
 		files = append(files, NewFile(path))
-		// Work(path, info)
 		return nil
 	})
 	if err != nil {
