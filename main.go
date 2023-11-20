@@ -68,7 +68,7 @@ func Walk(base string) {
 func Work(path string, name string) {
 	sep := strings.Split(name, ".")
 	if len(sep) > 0 {
-		author := sep[0]
+		author := strings.Trim(sep[0], "")
 		Check(author)
 		fmt.Println("移动文件:", path, "->", filepath.Join(author, name))
 		err := os.Rename(path, filepath.Join(author, name))
